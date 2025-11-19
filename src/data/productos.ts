@@ -1,4 +1,5 @@
 // Información detallada de productos con imágenes de alta calidad
+import { getProductImage } from '../utils/imageUtils'
 
 export interface Producto {
   id: number
@@ -7,6 +8,7 @@ export interface Producto {
   category: 'Industrial' | 'Profesional' | 'Comercial'
   description: string
   image: string
+  fallbackImage?: string
   specs: {
     capacidad?: string
     potencia?: string
@@ -27,7 +29,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Industrial',
     category: 'Industrial',
     description: 'Generador de ozono industrial de alta capacidad diseñado para tratamiento de aguas residuales, potables y de proceso industrial. Tecnología europea certificada con máxima eficiencia energética.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GRV15-EP', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '15 g/h',
       potencia: '500W',
@@ -57,7 +60,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Profesional V4',
     category: 'Profesional',
     description: 'Generador de ozono profesional de última generación (V4) con tecnología avanzada para aplicaciones profesionales. Diseño compacto con máximo rendimiento y control inteligente.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GZO75-EPS', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '75 g/h',
       potencia: '800W',
@@ -87,7 +91,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Profesional V1',
     category: 'Profesional',
     description: 'Versión compacta y eficiente para espacios reducidos. Perfecto para aplicaciones profesionales de mediana escala con excelente relación calidad-precio.',
-    image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GZO10-D', 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '10 g/h',
       potencia: '250W',
@@ -117,7 +122,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Comercial V2',
     category: 'Comercial',
     description: 'Ideal para establecimientos comerciales y pequeños negocios. Solución económica y eficaz para purificación de aire y agua en espacios comerciales.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GHBZO3-E', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '3 g/h',
       potencia: '120W',
@@ -147,7 +153,8 @@ export const productos: Producto[] = [
     title: 'Planta de Ozono Profesional V2',
     category: 'Profesional',
     description: 'Planta completa de tratamiento de ozono para aplicaciones profesionales. Sistema integrado con todos los componentes necesarios para tratamiento profesional de aguas.',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('HIDRO VT GZO75-EPS', 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '75 g/h (planta completa)',
       potencia: '1000W',
@@ -177,7 +184,8 @@ export const productos: Producto[] = [
     title: 'Planta de Ozono Profesional V2',
     category: 'Profesional',
     description: 'Planta de ozono profesional de mediana capacidad. Solución ideal para proyectos profesionales que requieren tratamiento eficiente y confiable.',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('HIDRO VT GZO40-EPS', 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '40 g/h',
       potencia: '600W',
@@ -207,7 +215,8 @@ export const productos: Producto[] = [
     title: 'Planta de Recirculación para Diluir Ozono V2',
     category: 'Industrial',
     description: 'Sistema de recirculación avanzado para dilución controlada de ozono. Ideal para aplicaciones industriales que requieren control preciso de concentración.',
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('HIDRO VT 84.522', 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: 'Dilución controlada',
       potencia: '400W',
@@ -237,7 +246,8 @@ export const productos: Producto[] = [
     title: 'Planta de Recirculación para Diluir Ozono V2',
     category: 'Industrial',
     description: 'Planta de recirculación de alta eficiencia para dilución de ozono en aplicaciones industriales. Diseñada para máxima seguridad y eficiencia operativa.',
-    image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('HIDRO V 84.315', 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: 'Alta eficiencia de dilución',
       potencia: '350W',
@@ -267,7 +277,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Industrial V5',
     category: 'Industrial',
     description: 'Generador de ozono industrial de máxima capacidad (V5). La solución más potente para grandes instalaciones industriales que requieren tratamiento a gran escala.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GRZO120-EPSF', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '120 g/h',
       potencia: '1500W',
@@ -297,7 +308,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Industrial V4',
     category: 'Industrial',
     description: 'Generador de ozono industrial de gran escala para plantas industriales. Solución robusta y confiable para aplicaciones industriales exigentes.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('GR3000-EP', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '3000 g/h',
       potencia: '5000W',
@@ -327,7 +339,8 @@ export const productos: Producto[] = [
     title: 'Planta de Ozono Profesional',
     category: 'Profesional',
     description: 'Planta de ozono profesional versión estándar. Solución equilibrada entre capacidad y costo para aplicaciones profesionales diversas.',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('HIDRO VT GZO40-ES', 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '40 g/h',
       potencia: '600W',
@@ -357,7 +370,8 @@ export const productos: Producto[] = [
     title: 'Generador de Ozono Profesional V1',
     category: 'Profesional',
     description: 'Generador profesional de entrada con tecnología certificada europea. Ideal para proyectos profesionales que inician con tratamiento de ozono.',
-    image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop',
+    image: getProductImage('G10-D', 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop'),
+    fallbackImage: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=1200&q=90&auto=format&fit=crop',
     specs: {
       capacidad: '10 g/h',
       potencia: '250W',

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Factory, Droplets, Zap } from 'lucide-react'
+import { useState } from 'react'
 
 interface Producto {
   id: number
@@ -8,6 +9,7 @@ interface Producto {
   category: 'Industrial' | 'Profesional' | 'Comercial'
   description: string
   image?: string
+  fallbackImage?: string
   icon?: any
 }
 
@@ -16,6 +18,9 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ producto }: ProductCardProps) {
+  const [imageError, setImageError] = useState(false)
+  const [currentImage, setCurrentImage] = useState(producto.image || '')
+  
   const categoryColors = {
     Industrial: 'from-orange-500 to-red-600',
     Profesional: 'from-blue-500 to-cyan-600',
@@ -30,6 +35,13 @@ export default function ProductCard({ producto }: ProductCardProps) {
 
   const Icon = producto.icon || categoryIcons[producto.category]
 
+  const handleImageError = () => {
+    if (!imageError && producto.fallbackImage) {
+      setImageError(true)
+      setCurrentImage(producto.fallbackImage)
+    }
+  }
+
   return (
     <motion.div
       whileHover={{ y: -8, scale: 1.02 }}
@@ -37,12 +49,13 @@ export default function ProductCard({ producto }: ProductCardProps) {
     >
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100">
-        {producto.image ? (
+        {currentImage ? (
           <img
-            src={producto.image}
+            src={currentImage}
             alt={producto.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
+            onError={handleImageError}
           />
         ) : (
           <div className={`w-full h-full bg-gradient-to-br ${categoryColors[producto.category]} flex items-center justify-center opacity-20`}>
