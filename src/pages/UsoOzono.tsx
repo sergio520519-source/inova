@@ -39,21 +39,26 @@ export default function UsoOzono() {
   return (
     <div className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-ozone-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Droplets className="w-16 h-16 text-primary-600 mx-auto mb-6" />
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-primary-600 to-ozone-600 bg-clip-text text-transparent">
+            <Droplets className="w-16 h-16 text-cyan-300 mx-auto mb-6" />
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-200 to-cyan-400 bg-clip-text text-transparent">
                 Uso del Ozono
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               Descubre las múltiples aplicaciones de la tecnología de ozono para el control ambiental 
               y la eficiencia energética.
             </p>
@@ -62,7 +67,7 @@ export default function UsoOzono() {
       </section>
 
       {/* What is Ozone */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-blue-950/50 via-blue-900/40 to-blue-950/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -71,15 +76,15 @@ export default function UsoOzono() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-display font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-display font-bold text-white mb-6 drop-shadow-lg">
                 ¿Qué es el Ozono?
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <p className="text-lg text-blue-100 leading-relaxed mb-6 drop-shadow-md">
                 El ozono (O₃) es una molécula compuesta por tres átomos de oxígeno. Es uno de los 
                 oxidantes más potentes conocidos y se utiliza eficazmente para la desinfección y 
                 purificación del agua y el aire.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-blue-100 leading-relaxed drop-shadow-md">
                 Su capacidad oxidante es superior a la del cloro, lo que lo convierte en una 
                 alternativa más eficiente y sostenible para el tratamiento de aguas y control ambiental.
               </p>
@@ -89,34 +94,34 @@ export default function UsoOzono() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-primary-100 to-ozone-100 rounded-2xl p-8"
+              className="bg-gradient-to-br from-blue-800/40 to-blue-700/30 backdrop-blur-md rounded-2xl p-8 border border-blue-600/30 shadow-xl"
             >
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Potente Desinfectante</h3>
-                    <p className="text-sm text-gray-600">Elimina virus, bacterias y hongos</p>
+                    <h3 className="font-semibold text-white">Potente Desinfectante</h3>
+                    <p className="text-sm text-blue-100">Elimina virus, bacterias y hongos</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-ozone-600 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
                     <Leaf className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">100% Natural</h3>
-                    <p className="text-sm text-gray-600">No genera residuos químicos</p>
+                    <h3 className="font-semibold text-white">100% Natural</h3>
+                    <p className="text-sm text-blue-100">No genera residuos químicos</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg">
                     <Zap className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Eficiente</h3>
-                    <p className="text-sm text-gray-600">Menor consumo energético</p>
+                    <h3 className="font-semibold text-white">Eficiente</h3>
+                    <p className="text-sm text-blue-100">Menor consumo energético</p>
                   </div>
                 </div>
               </div>
@@ -126,7 +131,7 @@ export default function UsoOzono() {
       </section>
 
       {/* Applications */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-blue-950/40 via-blue-900/30 to-blue-950/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -135,10 +140,10 @@ export default function UsoOzono() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg">
               Aplicaciones del Ozono
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto drop-shadow-md">
               Soluciones versátiles para múltiples sectores y necesidades
             </p>
           </motion.div>
@@ -153,17 +158,17 @@ export default function UsoOzono() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                  className="bg-gradient-to-br from-blue-800/50 to-blue-700/40 backdrop-blur-md rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-blue-500/30 hover:scale-105"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-ozone-500 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">{uso.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{uso.description}</p>
+                  <h3 className="text-2xl font-display font-bold text-white mb-4">{uso.title}</h3>
+                  <p className="text-blue-100 mb-6 leading-relaxed">{uso.description}</p>
                   <ul className="space-y-2">
                     {uso.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary-600 rounded-full"></div>
+                      <li key={idx} className="flex items-center space-x-2 text-sm text-blue-100">
+                        <div className="w-1.5 h-1.5 bg-cyan-300 rounded-full"></div>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -176,7 +181,7 @@ export default function UsoOzono() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-blue-950/50 via-blue-900/40 to-blue-950/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -185,7 +190,7 @@ export default function UsoOzono() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg">
               Beneficios Principales
             </h2>
           </motion.div>
@@ -200,13 +205,13 @@ export default function UsoOzono() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center border border-gray-100"
+                  className="bg-gradient-to-br from-blue-800/50 to-blue-700/40 backdrop-blur-md p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all text-center border border-blue-500/30 hover:scale-105"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-ozone-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-display font-bold text-lg text-gray-900 mb-2">{beneficio.title}</h3>
-                  <p className="text-sm text-gray-600">{beneficio.description}</p>
+                  <h3 className="font-display font-bold text-lg text-white mb-2">{beneficio.title}</h3>
+                  <p className="text-sm text-blue-100">{beneficio.description}</p>
                 </motion.div>
               )
             })}
