@@ -24,11 +24,15 @@ const footerLinks = {
   ],
 }
 
+import { MessageCircle, Send } from 'lucide-react'
+
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: MessageCircle, href: 'https://wa.me/573001234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20NTG%20INNOVA', label: 'WhatsApp' },
+  { icon: Send, href: 'https://t.me/ntginnova', label: 'Telegram' },
+  { icon: Twitter, href: 'https://twitter.com/ntginnova', label: 'X (Twitter)' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/ntginnova', label: 'LinkedIn' },
+  { icon: Facebook, href: 'https://facebook.com/ntginnova', label: 'Facebook' },
+  { icon: Instagram, href: 'https://instagram.com/ntginnova', label: 'Instagram' },
 ]
 
 export default function Footer() {
@@ -136,8 +140,10 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-primary-600 hover:text-white transition-all transform hover:scale-110"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-teal-900/50 to-emerald-900/50 text-teal-300 hover:from-teal-500 hover:to-emerald-500 hover:text-white transition-all transform hover:scale-110 border border-teal-700/50"
                   >
                     <Icon className="w-5 h-5" />
                   </a>

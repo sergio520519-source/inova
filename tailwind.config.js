@@ -28,6 +28,32 @@ export default {
           800: '#166534',
           900: '#14532d',
         },
+        premium: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
+          950: '#022c22',
+        },
+        teal: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -40,6 +66,7 @@ export default {
         'scale-in': 'scaleIn 0.3s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'gradient': 'gradient 15s ease infinite',
+        'shine': 'shine 3s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -65,6 +92,10 @@ export default {
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-100%) translateY(-100%) rotate(45deg)' },
+          '100%': { transform: 'translateX(100%) translateY(100%) rotate(45deg)' },
         },
       },
     },
