@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, Globe, Handshake, CheckCircle } from 'lucide-react'
+import { Award, Globe, Users, CheckCircle } from 'lucide-react'
 
 const proveedores = [
   {
@@ -28,7 +28,7 @@ const beneficios = [
     description: 'Acceso a las últimas innovaciones tecnológicas desarrolladas en Europa.',
   },
   {
-    icon: Handshake,
+    icon: Users,
     title: 'Alianzas Estratégicas',
     description: 'Relaciones sólidas que garantizan soporte técnico y servicio post-venta.',
   },
@@ -51,7 +51,7 @@ export default function Proveedores() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Handshake className="w-16 h-16 text-primary-600 mx-auto mb-6" />
+            <Users className="w-16 h-16 text-primary-600 mx-auto mb-6" />
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-6">
               <span className="bg-gradient-to-r from-primary-600 to-ozone-600 bg-clip-text text-transparent">
                 Nuestros Proveedores
