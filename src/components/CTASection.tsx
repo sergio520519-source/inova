@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Mail } from 'lucide-react'
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-ozone-600 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-700 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -31,7 +31,7 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               to="/contacto"
-              className="group inline-flex items-center space-x-2 px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+              className="group inline-flex items-center space-x-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
               <span>Solicitar Asesoría</span>

@@ -33,8 +33,8 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-blue-950/95 backdrop-blur-lg shadow-2xl border-b border-blue-800/50'
+          : 'bg-blue-950/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,12 +42,12 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-ozone-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
-              <div className="relative bg-gradient-to-r from-primary-600 to-ozone-600 text-white px-4 py-2 rounded-lg font-bold text-xl font-display">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-bold text-xl font-display shadow-lg">
                 NTG
               </div>
             </div>
-            <span className="font-display font-bold text-2xl text-gray-900 group-hover:text-primary-600 transition-colors">
+            <span className="font-display font-bold text-2xl text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">
               INNOVA
             </span>
           </Link>
@@ -62,15 +62,15 @@ export default function Header() {
                   to={item.path}
                   className={`relative px-4 py-2 font-semibold text-sm uppercase tracking-wide transition-colors rounded-lg ${
                     isActive
-                      ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
+                      ? 'text-cyan-300'
+                      : 'text-blue-100 hover:text-cyan-300'
                   }`}
                 >
                   {item.label}
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-ozone-500 rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
                       initial={false}
                       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                     />
@@ -82,12 +82,12 @@ export default function Header() {
 
           {/* Globe Icon & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-primary-50 text-primary-600 hover:bg-primary-100 transition-colors">
+            <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-blue-800/50 text-cyan-300 hover:bg-blue-700/50 transition-colors backdrop-blur-sm">
               <Globe className="w-5 h-5" />
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-blue-100 hover:bg-blue-800/50 transition-colors"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -107,7 +107,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-blue-950/95 backdrop-blur-lg border-t border-blue-800/50"
           >
             <nav className="px-4 py-4 space-y-2">
               {navItems.map((item) => {
@@ -119,8 +119,8 @@ export default function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-colors ${
                       isActive
-                        ? 'bg-primary-50 text-primary-600'
-                        : 'text-gray-700 hover:bg-gray-50'
+                        ? 'bg-blue-800/50 text-cyan-300'
+                        : 'text-blue-100 hover:bg-blue-800/30'
                     }`}
                   >
                     {item.label}

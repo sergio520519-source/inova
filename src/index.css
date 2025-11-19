@@ -4,8 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 text-white antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {

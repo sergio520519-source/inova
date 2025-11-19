@@ -1,106 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ProductCard from '../components/ProductCard'
-import { Factory, Droplets, Wind, Zap, Filter } from 'lucide-react'
-
-const allProductos = [
-  {
-    id: 1,
-    name: 'GRV15-EP',
-    title: 'Generador de Ozono Industrial',
-    category: 'Industrial',
-    description: 'Solución industrial de alta capacidad para tratamiento de aguas y control ambiental.',
-    icon: Factory,
-  },
-  {
-    id: 2,
-    name: 'GZO75-EPS',
-    title: 'Generador de Ozono Profesional. V4',
-    category: 'Profesional',
-    description: 'Tecnología de vanguardia para aplicaciones profesionales en tratamiento de aguas.',
-    icon: Droplets,
-  },
-  {
-    id: 3,
-    name: 'GZO10-D',
-    title: 'Generador de Ozono Profesional. V1',
-    category: 'Profesional',
-    description: 'Versión compacta para espacios reducidos con excelente rendimiento.',
-    icon: Wind,
-  },
-  {
-    id: 4,
-    name: 'GHBZO3-E',
-    title: 'Generador de Ozono Comercial. V2',
-    category: 'Comercial',
-    description: 'Ideal para establecimientos comerciales y pequeños negocios.',
-    icon: Zap,
-  },
-  {
-    id: 5,
-    name: 'HIDRO VT GZO75-EPS',
-    title: 'Planta de Ozono Profesional. V2',
-    category: 'Profesional',
-    description: 'Planta completa para tratamiento profesional de aguas.',
-    icon: Droplets,
-  },
-  {
-    id: 6,
-    name: 'HIDRO VT GZO40-EPS',
-    title: 'Planta de Ozono Profesional. V2',
-    category: 'Profesional',
-    description: 'Solución profesional de mediana capacidad.',
-    icon: Droplets,
-  },
-  {
-    id: 7,
-    name: 'HIDRO VT 84.522',
-    title: 'Planta de recirculación para diluir ozono. V2',
-    category: 'Industrial',
-    description: 'Sistema de recirculación para dilución controlada de ozono.',
-    icon: Factory,
-  },
-  {
-    id: 8,
-    name: 'HIDRO V 84.315',
-    title: 'Planta de recirculación para diluir ozono. V2',
-    category: 'Industrial',
-    description: 'Planta de recirculación de alta eficiencia (PENDIENTE).',
-    icon: Factory,
-  },
-  {
-    id: 9,
-    name: 'GRZO120-EPSF',
-    title: 'Generador de Ozono Industrial. V5',
-    category: 'Industrial',
-    description: 'Máxima capacidad para grandes instalaciones industriales.',
-    icon: Factory,
-  },
-  {
-    id: 10,
-    name: 'GR3000-EP',
-    title: 'Generador de Ozono Industrial. V4',
-    category: 'Industrial',
-    description: 'Solución de gran escala para plantas industriales.',
-    icon: Factory,
-  },
-  {
-    id: 11,
-    name: 'HIDRO VT GZO40-ES',
-    title: 'Planta de Ozono Profesional',
-    category: 'Profesional',
-    description: 'Versión estándar de planta profesional.',
-    icon: Droplets,
-  },
-  {
-    id: 12,
-    name: 'G10-D',
-    title: 'Generador de Ozono Profesional. V1',
-    category: 'Profesional',
-    description: 'Generador profesional de entrada con tecnología certificada.',
-    icon: Wind,
-  },
-]
+import { Filter } from 'lucide-react'
+import { productos as allProductos } from '../data/productos'
 
 const categories = ['Todos', 'Industrial', 'Profesional', 'Comercial']
 
@@ -114,20 +16,25 @@ export default function Catalogo() {
   return (
     <div className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-ozone-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-6">
-              <span className="bg-gradient-to-r from-primary-600 to-ozone-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-200 to-cyan-400 bg-clip-text text-transparent">
                 Catálogo de Productos
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               Tecnología europea certificada para soluciones de ozono y control ambiental. 
               Encuentra el equipo perfecto para tus necesidades.
             </p>
@@ -136,10 +43,10 @@ export default function Catalogo() {
       </section>
 
       {/* Filters */}
-      <section className="py-12 bg-white border-b border-gray-200">
+      <section className="py-12 bg-blue-950/80 backdrop-blur-sm border-b border-blue-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
-            <Filter className="w-5 h-5 text-gray-600" />
+            <Filter className="w-5 h-5 text-cyan-300" />
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
@@ -147,8 +54,8 @@ export default function Catalogo() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-primary-600 to-ozone-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl'
+                      : 'bg-blue-800/50 text-blue-100 hover:bg-blue-700/50 backdrop-blur-sm'
                   }`}
                 >
                   {category}
@@ -160,11 +67,11 @@ export default function Catalogo() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-blue-950/40 via-blue-900/30 to-blue-950/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <p className="text-gray-600">
-              Mostrando <strong>{filteredProductos.length}</strong> productos
+            <p className="text-blue-100">
+              Mostrando <strong className="text-white">{filteredProductos.length}</strong> productos
               {selectedCategory !== 'Todos' && ` en la categoría ${selectedCategory}`}
             </p>
           </div>
@@ -185,7 +92,7 @@ export default function Catalogo() {
 
           {filteredProductos.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-gray-500 text-lg">No se encontraron productos en esta categoría.</p>
+              <p className="text-blue-200 text-lg">No se encontraron productos en esta categoría.</p>
             </div>
           )}
         </div>

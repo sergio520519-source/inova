@@ -1,62 +1,15 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Droplets, Wind, Zap, Factory } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ProductCard from './ProductCard'
+import { productos as allProductos } from '../data/productos'
 
-const productos = [
-  {
-    id: 1,
-    name: 'GRV15-EP',
-    title: 'Generador de Ozono Industrial',
-    category: 'Industrial',
-    description: 'Solución industrial de alta capacidad para tratamiento de aguas',
-    icon: Factory,
-  },
-  {
-    id: 2,
-    name: 'GZO75-EPS',
-    title: 'Generador de Ozono Profesional V4',
-    category: 'Profesional',
-    description: 'Tecnología de vanguardia para aplicaciones profesionales',
-    icon: Droplets,
-  },
-  {
-    id: 3,
-    name: 'GZO10-D',
-    title: 'Generador de Ozono Profesional V1',
-    category: 'Profesional',
-    description: 'Versión compacta para espacios reducidos',
-    icon: Wind,
-  },
-  {
-    id: 4,
-    name: 'GHBZO3-E',
-    title: 'Generador de Ozono Comercial V2',
-    category: 'Comercial',
-    description: 'Ideal para establecimientos comerciales y pequeños negocios',
-    icon: Zap,
-  },
-  {
-    id: 5,
-    name: 'GRZO120-EPSF',
-    title: 'Generador de Ozono Industrial V5',
-    category: 'Industrial',
-    description: 'Máxima capacidad para grandes instalaciones industriales',
-    icon: Factory,
-  },
-  {
-    id: 6,
-    name: 'GR3000-EP',
-    title: 'Generador de Ozono Industrial V4',
-    category: 'Industrial',
-    description: 'Solución de gran escala para plantas industriales',
-    icon: Factory,
-  },
-]
+// Mostrar solo los primeros 6 productos destacados
+const productos = allProductos.slice(0, 6)
 
 export default function ProductosSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-24 bg-gradient-to-b from-blue-950/30 via-blue-900/20 to-blue-950/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,10 +18,10 @@ export default function ProductosSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 drop-shadow-lg">
             Tratamiento de Aguas para Control Ambiental
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
             Soluciones completas de ozono para eficiencia energética y control ambiental. 
             Tecnología europea certificada.
           </p>
@@ -97,7 +50,7 @@ export default function ProductosSection() {
         >
           <Link
             to="/catalogo"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-ozone-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <span>Ver Catálogo Completo</span>
             <ArrowRight className="w-5 h-5" />
