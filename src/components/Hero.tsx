@@ -111,8 +111,16 @@ export default function Hero() {
               loading="eager"
               onError={(e) => {
                 const target = e.target as HTMLImageElement
-                if (target.src.indexOf('iamngen') === -1) {
-                  target.src = '/products/iamngen embalse.jpg'
+                if (!target.dataset.fallbackAttempted) {
+                  target.dataset.fallbackAttempted = 'true'
+                  if (target.src.indexOf('iamngen') === -1) {
+                    target.src = '/iamngen embalse.jpg'
+                  } else {
+                    // Si también falla, ocultar la imagen
+                    target.style.display = 'none'
+                  }
+                } else {
+                  target.style.display = 'none'
                 }
               }}
             />

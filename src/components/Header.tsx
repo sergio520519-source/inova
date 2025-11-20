@@ -73,10 +73,16 @@ export default function Header() {
                   style={{ display: 'block', minWidth: '160px', maxWidth: '220px' }}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    // Show fallback
-                    const fallback = target.parentElement?.parentElement?.querySelector('.logo-fallback') as HTMLElement
-                    if (fallback) fallback.style.display = 'flex'
+                    if (!target.dataset.fallbackAttempted) {
+                      target.dataset.fallbackAttempted = 'true'
+                      // Intentar ruta alternativa
+                      target.src = '/ntggas.logo.png'
+                    } else {
+                      target.style.display = 'none'
+                      // Show fallback
+                      const fallback = target.parentElement?.parentElement?.querySelector('.logo-fallback') as HTMLElement
+                      if (fallback) fallback.style.display = 'flex'
+                    }
                   }}
                 />
                 
